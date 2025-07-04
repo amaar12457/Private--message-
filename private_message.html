@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>رسالة خاصة</title>
+<style>
+  body { font-family: 'Arial', sans-serif; background: #fff0f5; color: #333; padding: 20px; text-align: center; }
+  .container { max-width: 400px; margin: 50px auto; background: #fff; border-radius: 12px; box-shadow: 0 0 15px rgba(255, 192, 203, 0.5); padding: 30px; }
+  input[type="text"] { width: 80%; padding: 10px; margin: 15px 0; border-radius: 8px; border: 2px solid #ff69b4; font-size: 16px; }
+  button { background: #ff69b4; color: white; border: none; padding: 10px 25px; font-size: 16px; border-radius: 8px; cursor: pointer; }
+  button:hover { background: #ff1493; }
+  .message { margin-top: 20px; font-size: 18px; color: #c71585; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>عشان تشوف الرسالة، جاوب على السؤال</h2>
+    <p>ما هو الرقم؟</p>
+    <input type="text" id="answer" placeholder="اكتب الإجابة هنا" autocomplete="off" />
+    <br>
+    <button onclick="checkAnswer()">عرض الرسالة</button>
+    <div class="message" id="message"></div>
+  </div>
+
+<script>
+function checkAnswer() {
+  const userAnswer = document.getElementById('answer').value.trim();
+  const correctAnswer = "228";
+  const messageDiv = document.getElementById('message');
+
+  if (userAnswer === correctAnswer) {
+    messageDiv.style.color = "#c71585";
+    messageDiv.innerHTML = `أنا مره أحبك و أحب أسعدك، لأنك انتا مصدر سعادتي في الحياة، ودايم أقولك انتا سكر أيامي المره، وجودك يخليني أبتسم حتى في أصعب لحظاتي، وكل يوم معاك أحس إن الدنيا أجمل، الله لا يحرمني منك.`;
+  } else {
+    messageDiv.style.color = "red";
+    messageDiv.innerHTML = "الإجابة خطأ، حاول مرة ثانية.";
+  }
+}
+</script>
+</body>
+</html>
