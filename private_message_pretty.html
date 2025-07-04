@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>رسالة خاصة</title>
+<style>
+  body {
+    font-family: 'Tahoma', sans-serif;
+    background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+    color: #333;
+    padding: 20px;
+    text-align: center;
+  }
+  .container {
+    max-width: 450px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+    padding: 35px 25px;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #444;
+  }
+  p {
+    font-size: 18px;
+    margin-top: 0;
+    color: #666;
+  }
+  input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 2px solid #ff69b4;
+    font-size: 18px;
+    text-align: center;
+  }
+  button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #ff1493;
+  }
+  .message {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #c71585;
+    background: #fff0f5;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px dashed #ff69b4;
+  }
+  .title {
+    font-size: 26px;
+    color: #d63384;
+    margin-bottom: 25px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">💌 رسالة من القلب</div>
+    <h2>عشان تشوف الرسالة، جاوب على السؤال</h2>
+    <p>ما هو الرقم؟</p>
+    <input type="text" id="answer" placeholder="اكتب الإجابة هنا" autocomplete="off" />
+    <br>
+    <button onclick="checkAnswer()">عرض الرسالة</button>
+    <div class="message" id="message" style="display:none;"></div>
+  </div>
+
+<script>
+function checkAnswer() {
+  const userAnswer = document.getElementById('answer').value.trim();
+  const correctAnswer = "228";
+  const messageDiv = document.getElementById('message');
+
+  if (userAnswer === correctAnswer) {
+    messageDiv.style.display = "block";
+    messageDiv.innerHTML = `أنا مره أحبك و أحب أسعدك، لأنك انتا مصدر سعادتي في الحياة، ودايم أقولك انتا سكر أيامي المره، وجودك يخليني أبتسم حتى في أصعب لحظاتي، وكل يوم معاك أحس إن الدنيا أجمل، الله لا يحرمني منك.`;
+  } else {
+    messageDiv.style.display = "block";
+    messageDiv.style.color = "red";
+    messageDiv.style.background = "#ffe6e6";
+    messageDiv.innerHTML = "الإجابة خطأ، حاول مرة ثانية.";
+  }
+}
+</script>
+</body>
+</html>
